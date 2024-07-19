@@ -1,18 +1,17 @@
-import { useContext } from 'react';
-import { HoroscopeContext } from '../context/HoroscopeContext';
+import { useContext } from "react";
+import { HoroscopeContext } from "../context/HoroscopeContext";
 
 const Detail = () => {
-  const horoscopesObj = useContext(HoroscopeContext);
+  const { sign } = useContext(HoroscopeContext);
+
+  const { name, element, backgroundImg, traits } = sign;
 
   return (
-    <div className='details'>
-      <img
-        src='https://upload.wikimedia.org/wikipedia/commons/e/e1/FullMoon2010.jpg'
-        alt=''
-      />
-      <h2>Current Sign Name</h2>
-      <h4>Element: </h4>
-      <h4>Traits: </h4>
+    <div className="details">
+      <img src={backgroundImg} alt="" />
+      <h2>{name}</h2>
+      <h4>{element}</h4>
+      <h4>{traits} </h4>
     </div>
   );
 };
